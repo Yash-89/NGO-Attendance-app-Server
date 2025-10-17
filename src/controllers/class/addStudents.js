@@ -34,7 +34,7 @@ export const addStudents = asyncHandler(async (req, res) => {
   }
 
   // handle both formats: direct array or {students: array}
-  const students = Array.isArray(req.body) ? req.body : req.body.students;
+  const { students } = req.body;
 
   // validate students array
   if (!students) {
